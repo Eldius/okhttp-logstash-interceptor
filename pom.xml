@@ -90,11 +90,10 @@
       </plugins>
     </pluginManagement>
   </build>
-
   <distributionManagement>
     <repository>
       <id>github</id>
-      <name>GitHub Eldius Apache Maven Packages</name>
+      <name>GitHub Packages</name>
       <url>https://maven.pkg.github.com/eldius/okhttp-logstash-interceptor</url>
     </repository>
   </distributionManagement>
