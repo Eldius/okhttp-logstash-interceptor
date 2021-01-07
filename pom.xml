@@ -100,7 +100,7 @@
     <repository>
       <id>bintray-eldius-maven-repo</id>
       <name>eldius-okhttp-logstash-interceptor</name>
-      <url>https://api.bintray.com/maven/eldius/okhttp-logstash-interceptor/okhttp-logstash-interceptor/;publish=1</url>
+      <url>https://api.bintray.com/maven/eldius/eldius-maven-repo/okhttp-logstash-interceptor/;publish=1</url>
     </repository>
   </distributionManagement>
 </project>
