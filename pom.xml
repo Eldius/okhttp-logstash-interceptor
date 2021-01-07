@@ -5,7 +5,7 @@
 
   <groupId>net.eldiosantos.okhttp</groupId>
   <artifactId>okhttp-logstash-interceptor</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.1-SNAPSHOT</version>
 
   <name>logging-interceptor-logstash</name>
   <!-- FIXME change it to the project's website -->
@@ -99,7 +99,8 @@
   <distributionManagement>
     <repository>
       <id>bintray-eldius-maven-repo</id>
-      <url>https://dl.bintray.com/eldius/okhttp-logstash-interceptor/;publish=1</url>
+      <name>eldius-okhttp-logstash-interceptor</name>
+      <url>https://api.bintray.com/maven/eldius/okhttp-logstash-interceptor/okhttp-logstash-interceptor/;publish=1</url>
     </repository>
   </distributionManagement>
 </project>
