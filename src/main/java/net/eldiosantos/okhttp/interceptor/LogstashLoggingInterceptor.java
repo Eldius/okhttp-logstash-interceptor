@@ -7,6 +7,7 @@ import okhttp3.internal.http.HttpHeaders;
 import okio.Buffer;
 import okio.BufferedSource;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.EOFException;
 import java.io.IOException;
@@ -38,6 +39,11 @@ public class LogstashLoggingInterceptor implements Interceptor {
         this.level = level;
     }
 
+    public LogstashLoggingInterceptor(Level level) {
+        this.logger = LoggerFactory.getLogger(getClass());
+        this.level = level;
+    }
+
     public Response intercept(Chain chain) throws IOException {
         Level level = this.level;
 
@@ -56,7 +62,7 @@ public class LogstashLoggingInterceptor implements Interceptor {
         Protocol protocol = connection != null ? connection.protocol() : Protocol.HTTP_1_1;
         final LogstashMarker marker = Markers.append(KEY_PROTOCOL, protocol.toString())
                 .and(Markers.append(KEY_METHOD, request.method()))
-                .and(Markers.append(KEY_URL, request.url()));
+                .and(Markers.append(KEY_URL, request.url().toString()));
 
         if (!logHeaders && hasRequestBody) {
             marker.and(Markers.append(KEY_REQUEST_CONTENT_LENGTH, requestBody.contentLength()));
